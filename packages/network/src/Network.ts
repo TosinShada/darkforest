@@ -1,6 +1,7 @@
 import { DEFAULT_MAX_CALL_RETRIES } from '@darkforest_eth/constants';
 import { AutoGasSetting, EthAddress, GasPrices, SignedMessage } from '@darkforest_eth/types';
 import { JsonRpcProvider, TransactionReceipt } from '@ethersproject/providers';
+import { ApiHarmonyProvider } from 'ts-harmony-ethers-sdk';
 import { BigNumber, Contract, ContractInterface, providers, utils, Wallet } from 'ethers';
 import stringify from 'json-stable-stringify';
 import retry from 'p-retry';
@@ -179,7 +180,7 @@ export function makeProvider(rpcUrl: string): JsonRpcProvider {
   if (rpcUrl.startsWith('wss://')) {
     provider = new providers.WebSocketProvider(rpcUrl);
   } else {
-    provider = new providers.StaticJsonRpcProvider(rpcUrl);
+    provider = new ApiHarmonyProvider(rpcUrl);
     provider.pollingInterval = 8000;
   }
 

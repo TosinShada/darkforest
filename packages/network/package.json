@@ -33,6 +33,7 @@
     "p-defer": "^3.0.0",
     "p-retry": "^4.6.1",
     "p-timeout": "^4.0.0",
+    "ts-harmony-ethers-sdk": "0.0.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
