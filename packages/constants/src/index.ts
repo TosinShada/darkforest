@@ -123,16 +123,16 @@ export const GAS_PRICE_API = 'https://blockscout.com/xdai/mainnet/api/v1/gas-pri
  * In case we cannot load gas prices from xDai, these are the default auto gas prices.
  */
 export const DEFAULT_GAS_PRICES: GasPrices = {
-  slow: 1,
-  average: 3,
-  fast: 10,
+  slow: 30,
+  average: 60,
+  fast: 100,
 } as const;
 
 /**
  * In case xDai's auto-price is something ridiculous, we don't want our players to insta run out of
  * money.
  */
-export const MAX_AUTO_GAS_PRICE_GWEI = 15 as const;
+export const MAX_AUTO_GAS_PRICE_GWEI = 300 as const;
 
 /**
  * The URL to the block explorer for the chain being used. Prepended to transaction links, etc
